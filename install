@@ -2,13 +2,16 @@
 white='\033[1;37m'
 NC='\033[0m'
 
+echo -e "${white}Actualizando el sistema...${NC}"
+sudo apt update
+sudo apt upgrade -y
+
 echo -e "${white}Instalando theme Arc en el sistema...${NC}"
 sudo apt install autoconf automake pkg-config libgtk-3-dev git gnome-themes-standard gtk2-engines-murrine -y
 git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
 ./autogen.sh --prefix=/usr
 sudo make install
 cd ..
-
 
 echo -e "${white}Instalando Iconos Papirus y Paper en el sistema...${NC}"
 sudo add-apt-repository ppa:papirus/papirus -y
@@ -26,3 +29,19 @@ sudo chown root:root /usr/share/themes/ -R
 sudo chown root:root /usr/share/gnome-shell/extensions/ -R
 sudo chmod 755 /usr/share/themes/ -R
 sudo chmod 755 /usr/share/gnome-shell/extensions/ -R
+
+echo -e "${white}Actualizando el sistema...${NC}"
+sudo apt update
+sudo apt upgrade
+
+echo -e "${white}Instalando Chromium en el sistema...${NC}"
+sudo apt install chromium-browser -y
+
+echo -e "${white}Instalando Steam en el sistema...${NC}"
+sudo wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+sudo dpkg -i steam.deb
+sudo apt install -f
+sudo dpkg -i steam.deb
+
+echo -e "${white}Instalando Playonlinux en el sistema...${NC}"
+sudo apt install playonlinux -y
