@@ -45,3 +45,7 @@ sudo dpkg -i steam.deb
 
 echo -e "${white}Instalando Playonlinux en el sistema...${NC}"
 sudo apt install playonlinux -y
+
+echo -e "${white}Actualizando el sistema...${NC}"
+sudo apt update
+sudo apt upgrade
