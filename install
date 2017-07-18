@@ -46,6 +46,11 @@ sudo dpkg -i steam.deb
 echo -e "${white}Instalando Playonlinux en el sistema...${NC}"
 sudo apt install playonlinux -y
 
+echo -e "${white}Instalando Vlc en el sistema...${NC}"
+sudo add-apt-repository ppa:videolan/master-daily -y
+sudo apt update
+sudo apt install vlc
+
 echo -e "${white}Actualizando el sistema...${NC}"
 sudo apt update
 sudo apt upgrade
