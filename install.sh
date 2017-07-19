@@ -66,7 +66,7 @@ then
 	sleep 3s;
         apt install chromium-browser -y
 
-        echo -e "${blue}Instalando Vlc en el sistema...${NC}"
+        echo -e "${blue}Instalando Vlc en el sistema...${NC}";
 	sleep 3s;
         add-apt-repository ppa:videolan/master-daily -y
         apt update
