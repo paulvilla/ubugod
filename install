@@ -55,8 +55,7 @@ then
         chown root:root /usr/share/gnome-shell/extensions/ -R
         chmod 755 /usr/share/themes/ -R
         chmod 755 /usr/share/gnome-shell/extensions/ -R
-	cd /root
-	rm ubugod -R
+	cd ../..
 
         echo -e "${blue}Actualizando el sistema...${NC}"
 	sleep 3s;
@@ -72,6 +71,14 @@ then
         add-apt-repository ppa:videolan/master-daily -y
         apt update
         apt install vlc -y
+	
+	echo "${blue}Instalando herramientas de Pentesting"
+	apt install build-essential libpcap-dev aircrack-ng pixiewps -y
+	cd /root/ubugod
+	git clone https://github.com/t6x/reaver-wps-fork-t6x && reaver-wps-fork-t6x/src/
+	./configure
+	make
+	make install
 	
         echo -e "${blue}Instalando Steam en el sistema...${NC}"
 	sleep 3s;
@@ -89,6 +96,8 @@ then
         apt update
         apt upgrade -y
 	apt autoremove -y
+	cd /root
+	rm ubugod -R
 else 
 	echo -e "${red}No tienes conexión para instalar correctamente los modulos${NC}";
 	sleep 3s;
