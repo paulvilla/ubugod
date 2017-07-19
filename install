@@ -57,6 +57,11 @@ then
         echo -e "${blue}Instalando Chromium en el sistema...${NC}"
         sudo apt install chromium-browser -y
 
+        echo -e "${blue}Instalando Vlc en el sistema...${NC}"
+        sudo add-apt-repository ppa:videolan/master-daily -y
+        sudo apt update
+        sudo apt install vlc
+	
         echo -e "${blue}Instalando Steam en el sistema...${NC}"
         sudo wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
         sudo dpkg -i steam.deb
@@ -65,11 +70,6 @@ then
 
         echo -e "${blue}Instalando Playonlinux en el sistema...${NC}"
         sudo apt install playonlinux -y
-
-        echo -e "${blue}Instalando Vlc en el sistema...${NC}"
-        sudo add-apt-repository ppa:videolan/master-daily -y
-        sudo apt update
-        sudo apt install vlc
 
         echo -e "${blue}Actualizando el sistema...${NC}"
         sudo apt update
