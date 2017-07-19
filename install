@@ -71,9 +71,9 @@ then
         echo -e "${blue}Instalando Steam en el sistema...${NC}"
 	sleep 3s;
         sudo wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
-        sudo dpkg -i steam.deb
+        sudo dpkg -i steam.deb -y
         sudo apt install -f
-        sudo dpkg -i steam.deb
+        sudo dpkg -i steam.deb -y
 
         echo -e "${blue}Instalando Playonlinux en el sistema...${NC}"
 	sleep 3s;
