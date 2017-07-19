@@ -66,7 +66,7 @@ then
 	sleep 3s;
         sudo add-apt-repository ppa:videolan/master-daily -y
         sudo apt update
-        sudo apt install vlc
+        sudo apt install vlc -y
 	
         echo -e "${blue}Instalando Steam en el sistema...${NC}"
 	sleep 3s;
@@ -82,7 +82,8 @@ then
         echo -e "${blue}Actualizando el sistema...${NC}"
 	sleep 3s;
         sudo apt update
-        sudo apt upgrade
+        sudo apt upgrade -y
+	sudo apt autoremove -y
 else 
 	echo -e "${red}No tienes conexión para instalar correctamente los modulos${NC}";
 	sleep 3s;
