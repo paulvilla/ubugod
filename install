@@ -8,7 +8,7 @@ NC='\e[0m'
 clear;
 if [[ $UID != 0 ]];
 then
-	echo -e "${red}Inicia el Script como root${NC}";
+	echo -e "${red}Inicia el Script como root (sudo ...) para que funcione correctamente${NC}";
 	sleep 3s;
 	clear;
 	exit 1;
