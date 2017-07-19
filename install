@@ -1,56 +1,84 @@
 
-white='\033[1;37m'
-NC='\033[0m'
+#!/bin/bash
+blue='\033[1;37m'
+red='\e[1;38;5;160'
+green='\e[1;38;5;46m'
+NC='\e[0m'
 
-echo -e "${white}Actualizando el sistema...${NC}"
-sudo apt update
-sudo apt upgrade -y
+clear;
+if [[ $UID != 0 ]];
+then
+	echo -e "${red}Inicia el Script como root${NC}";
+	sleep 3s;
+	clear;
+	exit 1;
+fi
 
-echo -e "${white}Instalando theme Arc en el sistema...${NC}"
-sudo apt install autoconf automake pkg-config libgtk-3-dev git gnome-themes-standard gtk2-engines-murrine -y
-git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
-./autogen.sh --prefix=/usr
-sudo make install
-cd ..
+echo -e "${blue}Vamos a comprobar si tienes conexion para poder instalar todos los modulos:${NC}";
+sleep 5s;
 
-echo -e "${white}Instalando Iconos Papirus y Paper en el sistema...${NC}"
-sudo add-apt-repository ppa:papirus/papirus -y
-sudo add-apt-repository ppa:snwh/pulp -y
-sudo apt update
-sudo apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme -y
+if netcat -z google.com 80 &>/dev/null;
+then
+	echo -e "\e[1;38;5;46mTienes conexión, iniciando la instalación...${NC}";
+	sleep 3s;
+  
+        echo -e "${blue}Actualizando el sistema...${NC}"
+        sudo apt update
+        sudo apt upgrade -y
 
-echo -e "${white}Instalando Theme y Extensiones...${NC}"
-git clone https://github.com/Apricity-OS/apricity-themes-gnome --depth 1 && cd apricity-themes-gnome
-mv Arctic\ Apricity/ Ubugod
-sudo mv Ubugod/ /usr/share/themes/
-cd extensions/
-sudo mv * /usr/share/gnome-shell/extensions/
-sudo chown root:root /usr/share/themes/ -R
-sudo chown root:root /usr/share/gnome-shell/extensions/ -R
-sudo chmod 755 /usr/share/themes/ -R
-sudo chmod 755 /usr/share/gnome-shell/extensions/ -R
+        echo -e "${blue}Instalando theme Arc en el sistema...${NC}"
+        sudo apt install autoconf automake pkg-config libgtk-3-dev git gnome-themes-standard gtk2-engines-murrine -y
+        git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
+        ./autogen.sh --prefix=/usr
+        sudo make install
+        cd ..
 
-echo -e "${white}Actualizando el sistema...${NC}"
-sudo apt update
-sudo apt upgrade
+        echo -e "${blue}Instalando Iconos Papirus y Paper en el sistema...${NC}"
+        sudo add-apt-repository ppa:papirus/papirus -y
+        sudo add-apt-repository ppa:snwh/pulp -y
+        sudo apt update
+        sudo apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme -y
 
-echo -e "${white}Instalando Chromium en el sistema...${NC}"
-sudo apt install chromium-browser -y
+        echo -e "${blue}Instalando Theme y Extensiones...${NC}"
+        git clone https://github.com/Apricity-OS/apricity-themes-gnome --depth 1 && cd apricity-themes-gnome
+        mv Arctic\ Apricity/ Ubugod
+        sudo mv Ubugod/ /usr/share/themes/
+        cd extensions/
+        sudo mv * /usr/share/gnome-shell/extensions/
+        sudo chown root:root /usr/share/themes/ -R
+        sudo chown root:root /usr/share/gnome-shell/extensions/ -R
+        sudo chmod 755 /usr/share/themes/ -R
+        sudo chmod 755 /usr/share/gnome-shell/extensions/ -R
 
-echo -e "${white}Instalando Steam en el sistema...${NC}"
-sudo wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
-sudo dpkg -i steam.deb
-sudo apt install -f
-sudo dpkg -i steam.deb
+        echo -e "${blue}Actualizando el sistema...${NC}"
+        sudo apt update
+        sudo apt upgrade
 
-echo -e "${white}Instalando Playonlinux en el sistema...${NC}"
-sudo apt install playonlinux -y
+        echo -e "${blue}Instalando Chromium en el sistema...${NC}"
+        sudo apt install chromium-browser -y
 
-echo -e "${white}Instalando Vlc en el sistema...${NC}"
-sudo add-apt-repository ppa:videolan/master-daily -y
-sudo apt update
-sudo apt install vlc
+        echo -e "${blue}Instalando Steam en el sistema...${NC}"
+        sudo wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+        sudo dpkg -i steam.deb
+        sudo apt install -f
+        sudo dpkg -i steam.deb
 
-echo -e "${white}Actualizando el sistema...${NC}"
-sudo apt update
-sudo apt upgrade
+        echo -e "${blue}Instalando Playonlinux en el sistema...${NC}"
+        sudo apt install playonlinux -y
+
+        echo -e "${blue}Instalando Vlc en el sistema...${NC}"
+        sudo add-apt-repository ppa:videolan/master-daily -y
+        sudo apt update
+        sudo apt install vlc
+
+        echo -e "${blue}Actualizando el sistema...${NC}"
+        sudo apt update
+        sudo apt upgrade
+else 
+	echo -e "${red}No tienes conexión para instalar correctamente los modulos${NC}";
+	sleep 3s;
+
+echo -e "${blue}Cerrando Script automaticamante${NC}";
+sleep 3s;
+clear;
+fi
