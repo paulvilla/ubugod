@@ -22,11 +22,11 @@ then
 	echo -e "${green}Tienes conexión, iniciando la instalación...${NC}";
 	sleep 3s;
   
-        echo -e "${blue}Actualizando el sistema...${NC}"
+        echo -e "${blue}Actualizando el sistema...${NC}";
         apt update
         apt upgrade -y
 
-        echo -e "${blue}Instalando theme Arc en el sistema...${NC}"
+        echo -e "${blue}Instalando theme Arc en el sistema...${NC}";
 	sleep 3s;
 	cd /root
 	mkdir ubugod
@@ -37,14 +37,14 @@ then
         make install
         cd ..
 
-        echo -e "${blue}Instalando Iconos Papirus y Paper en el sistema...${NC}"
+        echo -e "${blue}Instalando Iconos Papirus y Paper en el sistema...${NC}";
 	sleep 3s;
         add-apt-repository ppa:papirus/papirus -y
         add-apt-repository ppa:snwh/pulp -y
         apt update
         apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme -y
 
-        echo -e "${blue}Instalando Theme y Extensiones...${NC}"
+        echo -e "${blue}Instalando Theme y Extensiones...${NC}";
 	sleep 3s;
         git clone https://github.com/Apricity-OS/apricity-themes-gnome --depth 1 && cd apricity-themes-gnome
         mv Arctic\ Apricity/ Ubugod
@@ -57,12 +57,12 @@ then
         chmod 755 /usr/share/gnome-shell/extensions/ -R
 	cd ../..
 
-        echo -e "${blue}Actualizando el sistema...${NC}"
+        echo -e "${blue}Actualizando el sistema...${NC}";
 	sleep 3s;
         apt update
         apt upgrade
 
-        echo -e "${blue}Instalando Chromium en el sistema...${NC}"
+        echo -e "${blue}Instalando Chromium en el sistema...${NC}";
 	sleep 3s;
         apt install chromium-browser -y
 
@@ -72,7 +72,7 @@ then
         apt update
         apt install vlc -y
 	
-	echo "${blue}Instalando herramientas de Pentesting...${NC}"
+	echo "${blue}Instalando herramientas de Pentesting...${NC}";
 	apt install build-essential libpcap-dev aircrack-ng pixiewps -y
 	cd /root/ubugod
 	git clone https://github.com/t6x/reaver-wps-fork-t6x && cd reaver-wps-fork-t6x/src/
@@ -85,18 +85,18 @@ then
     ./INSTALADOR
     
 	
-        echo -e "${blue}Instalando Steam en el sistema...${NC}"
+        echo -e "${blue}Instalando Steam en el sistema...${NC}";
 	sleep 3s;
         wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
         dpkg -i steam.deb -y
         apt install -f
         dpkg -i steam.deb -y
 
-        echo -e "${blue}Instalando Playonlinux en el sistema...${NC}"
+        echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
 	sleep 3s;
         apt install playonlinux -y
 
-        echo -e "${blue}Actualizando el sistema...${NC}"
+        echo -e "${blue}Actualizando el sistema...${NC}";
 	sleep 3s;
         apt update
         apt upgrade -y
