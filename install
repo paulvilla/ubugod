@@ -27,6 +27,7 @@ then
         sudo apt upgrade -y
 
         echo -e "${blue}Instalando theme Arc en el sistema...${NC}"
+	sleep 3s;
         sudo apt install autoconf automake pkg-config libgtk-3-dev git gnome-themes-standard gtk2-engines-murrine -y
         git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
         ./autogen.sh --prefix=/usr
@@ -34,12 +35,14 @@ then
         cd ..
 
         echo -e "${blue}Instalando Iconos Papirus y Paper en el sistema...${NC}"
+	sleep 3s;
         sudo add-apt-repository ppa:papirus/papirus -y
         sudo add-apt-repository ppa:snwh/pulp -y
         sudo apt update
         sudo apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme -y
 
         echo -e "${blue}Instalando Theme y Extensiones...${NC}"
+	sleep 3s;
         git clone https://github.com/Apricity-OS/apricity-themes-gnome --depth 1 && cd apricity-themes-gnome
         mv Arctic\ Apricity/ Ubugod
         sudo mv Ubugod/ /usr/share/themes/
@@ -51,27 +54,33 @@ then
         sudo chmod 755 /usr/share/gnome-shell/extensions/ -R
 
         echo -e "${blue}Actualizando el sistema...${NC}"
+	sleep 3s;
         sudo apt update
         sudo apt upgrade
 
         echo -e "${blue}Instalando Chromium en el sistema...${NC}"
+	sleep 3s;
         sudo apt install chromium-browser -y
 
         echo -e "${blue}Instalando Vlc en el sistema...${NC}"
+	sleep 3s;
         sudo add-apt-repository ppa:videolan/master-daily -y
         sudo apt update
         sudo apt install vlc
 	
         echo -e "${blue}Instalando Steam en el sistema...${NC}"
+	sleep 3s;
         sudo wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
         sudo dpkg -i steam.deb
         sudo apt install -f
         sudo dpkg -i steam.deb
 
         echo -e "${blue}Instalando Playonlinux en el sistema...${NC}"
+	sleep 3s;
         sudo apt install playonlinux -y
 
         echo -e "${blue}Actualizando el sistema...${NC}"
+	sleep 3s;
         sudo apt update
         sudo apt upgrade
 else 
