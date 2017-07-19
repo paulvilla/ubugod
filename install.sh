@@ -72,13 +72,18 @@ then
         apt update
         apt install vlc -y
 	
-	echo "${blue}Instalando herramientas de Pentesting"
+	echo "${blue}Instalando herramientas de Pentesting...${NC}"
 	apt install build-essential libpcap-dev aircrack-ng pixiewps -y
 	cd /root/ubugod
-	git clone https://github.com/t6x/reaver-wps-fork-t6x && reaver-wps-fork-t6x/src/
+	git clone https://github.com/t6x/reaver-wps-fork-t6x && cd reaver-wps-fork-t6x/src/
 	./configure
 	make
 	make install
+    cd /root/ubugod
+    git clone https://github.com/paulvilla/ubugod && cd modulos/pentesting/PixieScript_v2.6.3/
+    chmod +x INSTALADOR
+    ./INSTALADOR
+    
 	
         echo -e "${blue}Instalando Steam en el sistema...${NC}"
 	sleep 3s;
@@ -96,8 +101,8 @@ then
         apt update
         apt upgrade -y
 	apt autoremove -y
-	cd /root
-	rm ubugod -R
+	#cd /root
+	#rm ubugod -R
 else 
 	echo -e "${red}No tienes conexión para instalar correctamente los modulos${NC}";
 	sleep 3s;
