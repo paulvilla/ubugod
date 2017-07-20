@@ -72,27 +72,29 @@ then
         apt update
         apt install vlc -y
 	
-	echo "${blue}Instalando herramientas de Pentesting...${NC}";
-	apt install build-essential libpcap-dev aircrack-ng pixiewps -y
-	cd /root/ubugod
-    git clone https://github.com/wiire/pixiewps && cd pixiewps/src/
-    make
-    make install
-    cd /root/ubugod
-	git clone https://github.com/t6x/reaver-wps-fork-t6x && cd reaver-wps-fork-t6x/src/
-	./configure
-	make
-	make install
-    cd /root/ubugod
-    wget https://gtkdialog.googlecode.com/files/gtkdialog-0.8.3.tar.gz
-    tar -xvf gtkdialog-0.8.3.tar.gz && cd gtkdialog-0.8.3/
-    ./configure
-    make
-    make install
-    cd /root/ubugod
-    git clone https://github.com/paulvilla/ubugod && cd ubugod/modulos/pentesting/PixieScript_v2.6.3/
-    chmod +x INSTALADOR
-    ./INSTALADOR
+        echo "${blue}Instalando herramientas de Pentesting...${NC}";
+    sleep 3s;
+        apt install subversion
+        apt install build-essential libssl-dev libnl-3-dev sqlite3 libsqlite3-dev libnl-genl-3-dev libpcap-dev aircrack-ng reaver -y
+        cd /root/ubugod
+        git clone https://github.com/wiire/pixiewps && cd pixiewps/src/
+        make
+        make install
+        cd /root/ubugod
+        git clone https://github.com/t6x/reaver-wps-fork-t6x && cd reaver-wps-fork-t6x/src/
+        ./configure
+        make
+        make install
+        cd /root/ubugod
+        wget https://gtkdialog.googlecode.com/files/gtkdialog-0.8.3.tar.gz
+        tar -xvf gtkdialog-0.8.3.tar.gz && cd gtkdialog-0.8.3/
+        ./configure
+        make
+        make install
+        cd /root/ubugod
+        git clone https://github.com/paulvilla/ubugod && cd ubugod/modulos/pentesting/PixieScript_v2.6.3/
+        chmod +x INSTALADOR
+        ./INSTALADOR
     
 	
         echo -e "${blue}Instalando Steam en el sistema...${NC}";
