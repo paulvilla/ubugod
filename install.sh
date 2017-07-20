@@ -47,16 +47,14 @@ then
 
         echo -e "${blue}Instalando Theme y Extensiones...${NC}";
 	sleep 3s;
-            git clone https://github.com/Apricity-OS/apricity-themes-gnome --depth 1 && cd apricity-themes-gnome
-            mv Arctic\ Apricity/ Ubugod
-            mv Ubugod/ /usr/share/themes/
-        cd extensions/
-        mv * /usr/share/gnome-shell/extensions/
-            chown root:root /usr/share/themes/ -R
-            chown root:root /usr/share/gnome-shell/extensions/ -R
+        cd /root
+            git clone https://github.com/paulvilla/ubugod && cd ubugod/
+        cd modulos/extensions/
+        cp * /usr/share/gnome-shell/extensions/ -R
+        cd ../theme/ -R
+        cp Ubugod /usr/share/themes/
             chmod 755 /usr/share/themes/ -R
             chmod 755 /usr/share/gnome-shell/extensions/ -R
-        cd ../..
 
         echo -e "${blue}Actualizando el sistema...${NC}";
 	sleep 3s;
@@ -77,10 +75,7 @@ then
     sleep 3s;
             apt install subversion
             apt install build-essential libssl-dev libnl-3-dev sqlite3 libsqlite3-dev libnl-genl-3-dev libpcap-dev -y
-        cd /root/ubugod
-            wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
-            tar -zxvf aircrack-ng-1.2-rc4.tar.gz
-        cd aircrack-ng-1.2-rc4
+        cd /root/ubugod/modulos/pentesting/aircrack-ng-1.2-rc4/
             make
             make install
             make sqlite=true
@@ -92,9 +87,7 @@ then
             make install
         cd ../airdrop-ng
             make install        
-        cd /root/ubugod
-            apt install reaver -y
-            git clone https://github.com/wiire/pixiewps && cd pixiewps/src/
+        cd /root/ubugod/modulos/pentesting/reaver-1.4
             make
             make install
         cd /root/ubugod
@@ -111,9 +104,21 @@ then
             apt install -f
             dpkg -i steam.deb -y
 
+        echo -e "${blue}Instalando Gimp en el sistema...${NC}";
+	sleep 3s;
+            apt install gimp -y
+            
+        echo -e "${blue}Instalando Brackets en el sistema...${NC}";
+	sleep 3s;
+        cd /root/ubugod/modulos/librerias/
+            dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb -y
+            wget https://github.com/adobe/brackets/releases/download/release-1.10/Brackets.Release.1.10.64-bit.deb
+            dpkg -i Brackets.Release*.deb -y
+            
         echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
 	sleep 3s;
             apt install playonlinux -y
+
 
         echo -e "${blue}Actualizando el sistema...${NC}";
 	sleep 3s;
