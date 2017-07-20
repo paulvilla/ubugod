@@ -61,7 +61,7 @@ then
         echo -e "${blue}Actualizando el sistema...${NC}";
 	sleep 3s;
             apt update
-            apt upgrade
+            apt upgrade -y
 
         echo -e "${blue}Instalando Chromium en el sistema...${NC}";
 	sleep 3s;
