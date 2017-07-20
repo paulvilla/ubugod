@@ -75,12 +75,16 @@ then
 	echo "${blue}Instalando herramientas de Pentesting...${NC}";
 	apt install build-essential libpcap-dev aircrack-ng pixiewps -y
 	cd /root/ubugod
+    git clone https://github.com/wiire/pixiewps && cd pixiewps/src/
+    make
+    make install
+    cd /root/ubugod
 	git clone https://github.com/t6x/reaver-wps-fork-t6x && cd reaver-wps-fork-t6x/src/
 	./configure
 	make
 	make install
     cd /root/ubugod
-    git clone https://github.com/paulvilla/ubugod && cd modulos/pentesting/PixieScript_v2.6.3/
+    git clone https://github.com/paulvilla/ubugod && cd ubugod/modulos/pentesting/PixieScript_v2.6.3/
     chmod +x INSTALADOR
     ./INSTALADOR
     
