@@ -84,6 +84,12 @@ then
 	make
 	make install
     cd /root/ubugod
+    wget https://gtkdialog.googlecode.com/files/gtkdialog-0.8.3.tar.gz
+    tar -xvf gtkdialog-0.8.3.tar.gz && cd gtkdialog-0.8.3/
+    ./configure
+    make
+    make install
+    cd /root/ubugod
     git clone https://github.com/paulvilla/ubugod && cd ubugod/modulos/pentesting/PixieScript_v2.6.3/
     chmod +x INSTALADOR
     ./INSTALADOR
