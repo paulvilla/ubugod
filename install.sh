@@ -49,14 +49,14 @@ then
 	sleep 3s;
         cd /root
             git clone https://github.com/paulvilla/ubugod && cd ubugod/
-        cd modulos/extensions/
+        cp /root/ubugod/modulos/extensions/
         cp * /usr/share/gnome-shell/extensions/ -R
-        cd ../theme/
+        cp /root/ubugod/modulos/theme/
         cp Ubugod /usr/share/themes/ -R
-        cd ../images/
+        cp /root/ubugod/modulos/images/
         cp * /usr/share/backgrounds/ -R
         rm /usr/share/gnome-background-properties/gnome-backgrounds.xml
-        cp ../files/gnome-backgrounds.xml /usr/share/gnome-background-properties/ -R
+        cp /root/ubugod/modulos/files/gnome-backgrounds.xml /usr/share/gnome-background-properties/ -R
             chmod 755 /usr/share/themes/ -R
             chmod 755 /usr/share/gnome-shell/extensions/ -R
             chmod 755 /usr/share/backgrounds/ -R
