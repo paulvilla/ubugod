@@ -9,7 +9,7 @@ clear;
 
 if [[ $UID != 0 ]];
 then
-	echo -e "${red}Inicia el Script como root (sudo ...) para que funcione correctamente${NC}";
+	echo -e "${red}Inicia el Script como root (sudo su) para que funcione correctamente${NC}";
 	sleep 3s;
 	clear;
 	exit 1;
@@ -110,7 +110,7 @@ then
             
         echo -e "${blue}Instalando Brackets en el sistema...${NC}";
 	sleep 3s;
-        cd /root/ubugod/modulos/librerias/
+        cd /root/ubugod/modulos/libraries/
             dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb -y
             wget https://github.com/adobe/brackets/releases/download/release-1.10/Brackets.Release.1.10.64-bit.deb
             dpkg -i Brackets.Release*.deb -y
