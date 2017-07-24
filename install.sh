@@ -51,10 +51,13 @@ then
             git clone https://github.com/paulvilla/ubugod && cd ubugod/
         cd modulos/extensions/
         cp * /usr/share/gnome-shell/extensions/ -R
-        cd ../theme/ -R
-        cp Ubugod /usr/share/themes/
+        cd ../theme/
+        cp Ubugod /usr/share/themes/ -R
+        cd ../images/
+        cp * /usr/share/backgrounds/ -R
             chmod 755 /usr/share/themes/ -R
             chmod 755 /usr/share/gnome-shell/extensions/ -R
+            chmod 755 /usr/share/backgrounds/ -R
 
         echo -e "${blue}Actualizando el sistema...${NC}";
 	sleep 3s;
@@ -110,10 +113,13 @@ then
             
         echo -e "${blue}Instalando Brackets en el sistema...${NC}";
 	sleep 3s;
-        cd /root/ubugod/modulos/libraries/
-            dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb -y
-            wget https://github.com/adobe/brackets/releases/download/release-1.10/Brackets.Release.1.10.64-bit.deb
-            dpkg -i Brackets.Release*.deb -y
+            add-apt-repository ppa:webupd8team/brackets
+            apt update
+            apt install brackets -y
+                        
+        echo -e "${blue}Instalando Sublime Text 3 en el sistema...${NC}";
+	sleep 3s;
+            apt install sublime-text-installer -y
             
         echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
 	sleep 3s;

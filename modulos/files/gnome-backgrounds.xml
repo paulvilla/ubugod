@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
-	<wallpaper deleted="false">
+       
+        <wallpaper deleted="false">
+		
+		<name xml:lang="en_GB">Kayn 1</name>
+		<name xml:lang="es">Kayn 1</name>
+        <filename>/usr/share/backgrounds/gnome/Kayn_1.jpg</filename>
+        <options>zoom</options>
+    <pcolor>#ffffff</pcolor>
+    <scolor>#000000</scolor>
+    </wallpaper>
+        <wallpaper deleted="false">
+		
+		<name xml:lang="en_GB">Kindred_1</name>
+		<name xml:lang="es">Kindred_1</name>
+        <filename>/usr/share/backgrounds/gnome/Kindred_1.jpg</filename>
+        <options>zoom</options>
+    <pcolor>#ffffff</pcolor>
+    <scolor>#000000</scolor>
+    </wallpaper>
+       <wallpaper deleted="false">
+		
+		<name xml:lang="en_GB">Kindred_2</name>
+		<name xml:lang="es">Kindred_2</name>
+        <filename>/usr/share/backgrounds/gnome/Kindred_2.jpg</filename>
+        <options>zoom</options>
+    <pcolor>#ffffff</pcolor>
+    <scolor>#000000</scolor>
+    </wallpaper>
+       <wallpaper deleted="false">
+		
+		<name xml:lang="en_GB">Kindred_3</name>
+		<name xml:lang="es">Kindred_3</name>
+        <filename>/usr/share/backgrounds/gnome/Kindred_3.jpg</filename>
+        <options>zoom</options>
+    <pcolor>#ffffff</pcolor>
+    <scolor>#000000</scolor>
+    </wallpaper>
+       <wallpaper deleted="false">
+		
+		<name xml:lang="en_GB">Kindred_4</name>
+		<name xml:lang="es">Kindred_4</name>
+        <filename>/usr/share/backgrounds/gnome/Kindred_4.jpg</filename>
+        <options>zoom</options>
+    <pcolor>#ffffff</pcolor>
+    <scolor>#000000</scolor>
+    </wallpaper>
+        <wallpaper deleted="false">
 		
 		<name>Blinds</name>
 		<name xml:lang="af">Blindings</name>
