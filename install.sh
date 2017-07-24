@@ -48,7 +48,7 @@ then
         echo -e "${blue}Instalando Theme y Extensiones...${NC}";
 	sleep 3s;
         cd /root
-            git clone https://github.com/paulvilla/ubugod && cd ubugod/
+            git clone https://github.com/paulvilla/ubugod
         cp /root/ubugod/modulos/extensions/
         cp * /usr/share/gnome-shell/extensions/ -R
         cp /root/ubugod/modulos/theme/
@@ -60,6 +60,7 @@ then
             chmod 755 /usr/share/themes/ -R
             chmod 755 /usr/share/gnome-shell/extensions/ -R
             chmod 755 /usr/share/backgrounds/ -R
+            chmod 644 /usr/share/gnome-background-properties/gnome-backgrounds.xml
 
         echo -e "${blue}Actualizando el sistema...${NC}";
 	sleep 3s;
