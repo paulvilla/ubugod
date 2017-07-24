@@ -55,6 +55,8 @@ then
         cp Ubugod /usr/share/themes/ -R
         cd ../images/
         cp * /usr/share/backgrounds/ -R
+        rm /usr/share/gnome-background-properties/gnome-backgrounds.xml
+        cp ../files/gnome-backgrounds.xml /usr/share/gnome-background-properties/ -R
             chmod 755 /usr/share/themes/ -R
             chmod 755 /usr/share/gnome-shell/extensions/ -R
             chmod 755 /usr/share/backgrounds/ -R
@@ -73,10 +75,24 @@ then
             add-apt-repository ppa:videolan/master-daily -y
             apt update
             apt install vlc -y
-	
+            
+        echo -e "${blue}Instalando Gimp en el sistema...${NC}";
+	sleep 3s;
+            apt install gimp -y
+            
+        echo -e "${blue}Instalando Brackets en el sistema...${NC}";
+	sleep 3s;
+            add-apt-repository ppa:webupd8team/brackets -y
+            apt update
+            apt install brackets -y
+                        
+        echo -e "${blue}Instalando Sublime Text 3 en el sistema...${NC}";
+	sleep 3s;
+            apt install sublime-text-installer -y
+            
         echo "${blue}Instalando herramientas de Pentesting...${NC}";
     sleep 3s;
-            apt install subversion
+            apt install subversion -y
             apt install build-essential libssl-dev libnl-3-dev sqlite3 libsqlite3-dev libnl-genl-3-dev libpcap-dev -y
         cd /root/ubugod/modulos/pentesting/aircrack-ng-1.2-rc4/
             make
@@ -107,20 +123,6 @@ then
             apt install -f
             dpkg -i steam.deb -y
 
-        echo -e "${blue}Instalando Gimp en el sistema...${NC}";
-	sleep 3s;
-            apt install gimp -y
-            
-        echo -e "${blue}Instalando Brackets en el sistema...${NC}";
-	sleep 3s;
-            add-apt-repository ppa:webupd8team/brackets
-            apt update
-            apt install brackets -y
-                        
-        echo -e "${blue}Instalando Sublime Text 3 en el sistema...${NC}";
-	sleep 3s;
-            apt install sublime-text-installer -y
-            
         echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
 	sleep 3s;
             apt install playonlinux -y
