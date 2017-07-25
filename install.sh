@@ -57,9 +57,9 @@ then
         cp * /usr/share/backgrounds/ -R
         rm /usr/share/gnome-background-properties/gnome-backgrounds.xml
         cp /root/ubugod/modulos/files/gnome-backgrounds.xml /usr/share/gnome-background-properties/ -R
-            chmod 755 /usr/share/themes/ -R
-            chmod 755 /usr/share/gnome-shell/extensions/ -R
-            chmod 755 /usr/share/backgrounds/ -R
+            chmod 755 /usr/share/themes/* -R
+            chmod 755 /usr/share/gnome-shell/extensions/* -R
+            chmod 755 /usr/share/backgrounds/* -R
             chmod 644 /usr/share/gnome-background-properties/gnome-backgrounds.xml -R
 
         echo -e "${blue}Actualizando el sistema...${NC}";
@@ -95,6 +95,7 @@ then
     sleep 3s;
             apt install subversion -y
             apt install build-essential libssl-dev libnl-3-dev sqlite3 libsqlite3-dev libnl-genl-3-dev libpcap-dev -y
+            apt install aircrack-ng reaver -y
         cd /root/ubugod/modulos/pentesting/aircrack-ng-1.2-rc4/
             make
             make install
