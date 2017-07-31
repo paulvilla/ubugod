@@ -80,6 +80,12 @@ then
         echo -e "${blue}Instalando Gimp en el sistema...${NC}";
 	sleep 3s;
             apt install gimp -y
+	
+	echo -e "${blue}Instalando Gimp en el sistema...${NC}";
+	sleep 3s;
+	    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	    apt update
+	    apt install sublime-text -y
             
         echo -e "${blue}Instalando Brackets en el sistema...${NC}";
 	sleep 3s;
