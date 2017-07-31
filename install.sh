@@ -80,12 +80,6 @@ then
         echo -e "${blue}Instalando Gimp en el sistema...${NC}";
 	sleep 3s;
             apt install gimp -y
-	
-	echo -e "${blue}Instalando Gimp en el sistema...${NC}";
-	sleep 3s;
-	    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-	    apt update
-	    apt install sublime-text -y
             
         echo -e "${blue}Instalando Brackets en el sistema...${NC}";
 	sleep 3s;
@@ -96,6 +90,10 @@ then
         echo -e "${blue}Instalando Sublime Text 3 en el sistema...${NC}";
 	sleep 3s;
             apt install sublime-text-installer -y
+	    
+	echo -e "${blue}Instalando Calibre eBook en el sistema...${NC}";
+	sleep 3s;
+	    sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
             
         echo "${blue}Instalando herramientas de Pentesting...${NC}";
     sleep 3s;
