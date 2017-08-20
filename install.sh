@@ -7,8 +7,7 @@ NC='\e[0m'
 
 clear;
 
-if [[ $EUID -ne 0 ]];
-then
+if [[ $EUID -ne 0 ]]; then
 	echo -e "${red}Inicia el Script como root para que funcione${NC}";
 	sleep 3s;
 	clear;
@@ -17,8 +16,7 @@ else
 
         echo -e "${blue}Vamos a comprobar si tienes conexion para poder instalar todos los modulos:${NC}";
         sleep 5s;
-        if netcat -z google.com 80 &>/dev/null;
-        then
+        if netcat -z google.com 80 &>/dev/null; then
                     echo -e "${green}Tienes conexión, iniciando la instalación...${NC}";
                     sleep 3s;
 
@@ -132,11 +130,12 @@ else
                             apt autoremove -y
                             #cd /root
                             #rm ubugod -R
-else
-    echo -e "${red}No tienes conexión para instalar correctamente los modulos${NC}";
-	sleep 3s;
+        else
+            echo -e "${red}No tienes conexión para instalar correctamente los modulos${NC}";
+            sleep 3s;
 
-    echo -e "${blue}Cerrando Script automaticamante${NC}";
-    sleep 3s;
-clear;
+            echo -e "${blue}Cerrando Script automaticamante${NC}";
+            sleep 3s;
+        clear;
+        fi
 fi
