@@ -117,7 +117,7 @@ else
                         cd /root/ubugod
                             wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
                             dpkg -i steam.deb -y
-                            apt install -y
+                            apt install -f
                             dpkg -i steam.deb -y
 
                     echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
@@ -130,8 +130,8 @@ else
                             apt update
                             apt upgrade -y
                             apt autoremove -y
-                            #cd /root
-                            #rm ubugod -R
+                            cd /root
+                            rm ubugod -R && rm arc-theme -R && rm linux-installer.py
         else
             echo -e "${red}No tienes conexión para instalar correctamente los modulos${NC}";
             sleep 3s;
