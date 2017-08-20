@@ -30,13 +30,10 @@ then
         echo -e "${blue}Instalando theme Arc en el sistema...${NC}";
 	sleep 3s;
         cd /root
-        mkdir ubugod
-        cd ubugod
             apt install autoconf automake pkg-config libgtk-3-dev git gnome-themes-standard gtk2-engines-murrine -y
             git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
             ./autogen.sh --prefix=/usr
             make install
-        cd ..
 
         echo -e "${blue}Instalando Iconos Papirus y Paper en el sistema...${NC}";
 	sleep 3s;
@@ -124,7 +121,7 @@ then
         cd /root/ubugod
             wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
             dpkg -i steam.deb -y
-            apt install -f
+            apt install -y
             dpkg -i steam.deb -y
 
         echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
