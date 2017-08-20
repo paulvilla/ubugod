@@ -6,8 +6,10 @@ green='\e[1;38;5;46m'
 NC='\e[0m'
 
 clear;
-
-if [[ $EUID -ne 0 ]]; then
+FILE="/tmp/out.$$"
+GREP="/bin/grep"
+# Make sure only root can run our script
+if [ "$(id -u)" != "0" ]; then
 	echo -e "${red}Inicia el Script como root para que funcione${NC}";
 	sleep 3s;
 	clear;
