@@ -92,25 +92,25 @@ else
                     sleep 3s;
                             apt install subversion -y
                             apt install build-essential libssl-dev libnl-3-dev sqlite3 libsqlite3-dev libnl-genl-3-dev libpcap-dev g++ dpkg-config -y
-                            apt install aircrack-ng reaver -y
-                        cd /root/ubugod/modulos/pentesting/aircrack-ng-1.2-rc4/
-                            make sqlite=true experimental=true ext_scripts=true
-                            make sqlite=true experimental=true ext_scripts=true install
-                            airodump-ng-oui-update
-                        cd scripts/airoscript-ng
-                            make
-                        cd ../airgraph-ng
-                            make install
-                        cd ../airdrop-ng
-                            make install        
-                        cd /root/ubugod/modulos/pentesting/reaver-1.4
-                            make
-                            make install
-                        cd /root/ubugod
-                            git clone https://github.com/t6x/reaver-wps-fork-t6x && cd reaver-wps-fork-t6x/src/
-                            ./configure
-                            make
-                            make install    
+                            #apt install aircrack-ng reaver -y
+                        #cd /root/ubugod/modulos/pentesting/aircrack-ng-1.2-rc4/
+                            #make sqlite=true experimental=true ext_scripts=true
+                            #make sqlite=true experimental=true ext_scripts=true install
+                            a#irodump-ng-oui-update
+                        #cd scripts/airoscript-ng
+                            m#ake
+                        #cd ../airgraph-ng
+                            #make install
+                        #cd ../airdrop-ng
+                            #make install        
+                        #cd /root/ubugod/modulos/pentesting/reaver-1.4
+                            #make
+                            #make install
+                        #cd /root/ubugod
+                            #git clone https://github.com/t6x/reaver-wps-fork-t6x && cd reaver-wps-fork-t6x/src/
+                            #./configure
+                            #make
+                            #make install    
 
                     echo -e "${blue}Instalando Steam en el sistema...${NC}";
                     sleep 3s;
