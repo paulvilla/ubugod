@@ -96,9 +96,9 @@ else
                         #cd /root/ubugod/modulos/pentesting/aircrack-ng-1.2-rc4/
                             #make sqlite=true experimental=true ext_scripts=true
                             #make sqlite=true experimental=true ext_scripts=true install
-                            a#irodump-ng-oui-update
+                            #airodump-ng-oui-update
                         #cd scripts/airoscript-ng
-                            m#ake
+                            #make
                         #cd ../airgraph-ng
                             #make install
                         #cd ../airdrop-ng
