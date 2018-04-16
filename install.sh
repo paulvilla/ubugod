@@ -38,8 +38,9 @@ else
                     sleep 3s;
                             add-apt-repository ppa:papirus/papirus -y
                             add-apt-repository ppa:snwh/pulp -y
+			    add-apt-repository ppa:tista/adapta -y
                             apt update
-                            apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme -y
+                            apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme adapta-gtk-theme -y
 
                     echo -e "${blue}Instalando Theme y Extensiones...${NC}";
                     sleep 3s;
@@ -120,9 +121,9 @@ else
                             apt install -f
                             dpkg -i steam.deb -y
 
-                    echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
-                    sleep 3s;
-                            apt install playonlinux -y
+                    #echo -e "${blue}Instalando Playonlinux en el sistema...${NC}";
+                    #sleep 3s;
+                            #apt install playonlinux -y
 
 
                     echo -e "${blue}Actualizando el sistema...${NC}";
