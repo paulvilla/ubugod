@@ -39,8 +39,14 @@ else
                             add-apt-repository ppa:papirus/papirus -y
                             add-apt-repository ppa:snwh/pulp -y
 			    add-apt-repository ppa:tista/adapta -y
+			    add-apt-repository ppa:videolan/master-daily -y
+			    add-apt-repository ppa:obsproject/obs-studio -y
                             apt update
-                            apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme adapta-gtk-theme -y
+			    cd && mkdir sublime && cd sublime 
+			    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+			    apt install apt-transport-https -y
+			    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+                            apt install papirus-icon-theme paper-icon-theme paper-cursor-theme paper-gtk-theme adapta-gtk-theme sublime-text obs-studio kdenlive -y
 
                     echo -e "${blue}Instalando Theme y Extensiones...${NC}";
                     sleep 3s;
